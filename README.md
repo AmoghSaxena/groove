@@ -122,7 +122,7 @@
       Contributions to the Interactive Cryptography Visualization application
       are welcome! If you find any issues or have suggestions for improvements,
       please submit an issue or pull request on the
-      <a href="https://github.com/yourusername/crypto-visualization"
+      <a href="https://github.com/AmoghSaxena/groove"
         >GitHub repository</a
       >.
     </p>
