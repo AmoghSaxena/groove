@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card">
+          <div class="d-flex align-items-end row">
+            <div class="col-lg-12">
+              <div class="card-body">
+                <h2 class="card-title text-primary">Vigenère Cipher</h2>
+                <p class="mb-4">
+                  The Vigenère cipher is a method of encrypting alphabetic text where each letter of the plaintext is encoded with a different Caesar cipher, whose increment is determined by the corresponding letter of another text, the key.
+                  <br>
+                  <ul class="list-unstyled mt-2">
+                    <li>For example, if the plaintext is <code>attacking tonight</code> and the key is <code class='text-warning'>OCULORHINOLARINGOLOGY</code>, then
+                      <ul>
+                        <li>the first letter <span class="text-info">a</span> of the plaintext is shifted by 14 positions in the alphabet (because the first letter <span class="text-warning">O</span> of the key is the 14th letter of the alphabet, counting from zero), yielding <span class="text-info">o</span>;</li>
+                        <li>the second letter <span class="text-info">t</span> is shifted by 2 (because the second letter <span class="text-warning">C</span> of the key means 2) yielding <span class="text-info">v</span>v;</li>
+                        <li>the third letter <span class="text-info">t</span> is shifted by 20 (<span class="text-warning">U</span>) yielding <span class="text-info">n</span>, with wrap-around;</li>
+                      </ul>
+                    </li>
+                    <li>and so on; yielding the message ovnlqbpvt hznzouz. If the recipient of the message knows the key, they can recover the plaintext by reversing this process.</li>
+                  </ul>
+                </p>
+                <div class="col-sm-5 text-center text-sm-left">
+                  <div class="card-body pb-0 px-0 px-md-4">
+                    <img
+                      src="{% static 'assets/img/VigenereCipher.png' %}"
+                      height="200"
+                    />
+                  </div>
+                </div>
+                <br>
+                <p class="mb-4">
+                    Example:
+                    <br>
+                    For example, consider the following encryption using the keyword <kbd>ABCD</kbd>:
+                    <br><br>
+                    <code>
+                    Key:        ABCDABCDABCDABCDABCDABCDABCD
+                    <br>
+                    Plaintext:  cryptoisshortforcryptography
+                    <br>
+                    Ciphertext: CSASTPKVSIQUTGQUCSASTPIUAQJB
+                    </code>
+                    <br><br>
+
+                    Complexity
+                    <br>
+                    Time: <kbd>O(m*n)</kbd>, where <kbd>m</kbd> is the length of the alphabet and <kbd>n</kbd> is the length of the word.
+                    <br>  
+                    Space: <kbd>O(26^k)</kbd> for a key of length <kbd>k</kbd>
+
+                    <br><br>
+
+                    References
+                    <br>
+
+                <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">Vigenère cipher on Wikipedia</a>
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+
+{% endblock %}

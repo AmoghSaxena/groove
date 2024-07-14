@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card">
+          <div class="d-flex align-items-end row">
+            <div class="col-lg-12">
+              <div class="card-body">
+                <h2 class="card-title text-primary">What is RSA?</h2>
+                <p class="mb-4"> The Rivest-Shamir-Adleman (RSA) encryption algorithm is an asymmetric encryption algorithm that is widely used in many products and services. Asymmetric encryption uses a key pair that is mathematically linked to encrypt and decrypt data. A private and public key are created, with the public key being accessible to anyone and the private key being a secret known only by the key pair creator. With RSA, either the private or public key can encrypt the data, while the other key decrypts it. This is one of the reasons RSA is the most used asymmetric encryption algorithm.
+                </p>
+                <p>
+                    The other method of asymmetric encryption with RSA is encrypting a message with a private key. In this example, the sender of the data encrypts the data with their private key and sends encrypted data and their public key along to the recipient of the data. The recipient of the data can then decrypt the data with the sender’s public key, thus verifying the sender is who they say they are. With this method, the data could be stolen and read in transit, but the true purpose of this type of encryption is to prove the identity of the sender. If the data were stolen and modified in transit, the public key would not be able to decrypt the new message, and so the recipient would know the data had been modified in transit.
+                </p>
+                <ul class="list-unstyled mt-2">
+                  <li>The process of RSA encryption and decryption can be summarized in three main steps:
+                    <ul>
+                      <li>Key Generation: Two large prime numbers are chosen and multiplied together to produce a modulus. The public and private keys are then derived from this modulus.</li>
+                      <li>Encryption: The sender uses the recipient's public key to encrypt the message. This ensures that only the recipient can decrypt the message using their private key.</li>
+                      <li>Decryption: The recipient uses their private key to decrypt the message, recovering the original plaintext.</li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="col-sm-5 text-center text-sm-left">
+                  <div class="card-body pb-0 px-0 px-md-4">
+                    <img
+                      src="{% static 'assets/img/RSA.jpg' %}"
+                      height="250"
+                    />
+                  </div>
+                </div>
+                <br>
+                <p class="mb-4">
+                  Despite its strengths, RSA is not without its challenges. The algorithm is computationally intensive, and its security depends on the key size. Larger keys provide greater security but require more processing power. As computational capabilities continue to evolve, cryptographers are constantly exploring new techniques to enhance the security of RSA and other cryptographic methods.                  <br>
+                  <br>
+                  References
+                  <br>
+                  <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">RSA Algorithm on Wikipedia</a>
+                </p>
+              
+              <div class="divider divider-warning">
+                <div class="divider-text">Video for Reference</div>
+              </div>
+
+              <!-- Modal with YouTube Video -->
+              <div class="col-lg-4 col-md-6">
+                <small class="text-light fw-semibold">YouTube Video</small>
+                <div class="mt-3">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#youTubeModal"
+                    data-theVideo="https://www.youtube.com/embed/b4b8ktEV4Bg"
+                  >
+                    Launch Video
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="youTubeModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <iframe height="350" src="https://www.youtube.com/embed/b4b8ktEV4Bg"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Button Ends here!-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+
+{% endblock %}

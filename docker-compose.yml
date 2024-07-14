@@ -1,0 +1,11 @@
+version: "3"
+services:
+    dashboard:
+        build: .
+        hostname: apcserver
+        command: /startserver
+        ports:
+            - 8000:5085
+        volumes:
+            - ./:/PROJECT/
+  

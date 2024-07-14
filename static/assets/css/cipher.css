@@ -1,0 +1,45 @@
+.highlight {
+    background-color: yellow;
+}
+.highlight-row {
+    background-color: lightblue;
+}
+.highlight-col {
+    background-color: lightgreen;
+}
+
+/* .gear span, .shiftedGear span {
+    display: inline-block;
+    width: 2vw;
+    height: 5vh;
+    text-align: center;
+    border: 1px solid black;
+    margin-right: 5px;
+  } */
+
+  .gear span, .shiftedGear span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 1px;
+    line-height: 30px;
+  }
+  @media screen and (max-width: 768px) {
+    .gear span, .shiftedGear span {
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .gear span, .shiftedGear span {
+      width: 25px;
+      height: 25px;
+      font-size: 16px;
+      line-height: 25px;
+      margin: 3px;
+    }
+  }

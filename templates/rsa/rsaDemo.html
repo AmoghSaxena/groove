@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %} 
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card">
+          <div class="d-flex align-items-end row">
+            <div class="col-lg-12">
+              <div class="card-body">
+                <h2 class="card-title text-primary">Interactive RSA Algorithm Visualization</h2>
+                <br><br>
+
+                <div class="card-body">
+                    <div class="form-inline input-container">
+                        <input class="form-control mb-2 mr-sm-2" type="text" id="message" placeholder="Enter message to encrypt:" />
+                        <input class="form-control mb-2 mr-sm-2" type="text" id="p" placeholder="Enter prime number p" />
+                        <input class="form-control mb-2 mr-sm-2" type="text" id="q" placeholder="Enter prime number q" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                  <ul class="nav nav-pills mb-3 nav-fill" role="tablist">
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link active"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-pills-justified-home"
+                        aria-controls="navs-pills-justified-home"
+                        aria-selected="true"
+                        onclick="generateKeys()"
+                      >
+                        <i class="tf-icons bx bxs-key"></i> Generate Keys
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-pills-justified-profile"
+                        aria-controls="navs-pills-justified-profile"
+                        aria-selected="false"
+                        onclick="encryptMessage()"
+                      >
+                        <i class="tf-icons bx bxs-lock"></i> Encrypt Message
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-pills-justified-messages"
+                        {% comment %} aria-controls="navs-pills-justified-messages" {% endcomment %}
+                        aria-selected="false"
+                        onclick="decryptMessage()"
+                      >
+                        <i class="tf-icons bx bxs-lock-open"></i> Decrypt Message
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="navs-pills-justified-home" id="keyGenOutput" role="tabpanel">
+                      <div id="keyGenOutput" class="output-section"></div>
+                    </div>
+                    <div class="tab-pane fade" id="navs-pills-justified-profile" role="tabpanel">
+                      <div id="encryptionOutput" class="output-section"></div>
+                    </div>
+                    <div class="tab-pane fade" id="navs-pills-justified-messages" role="tabpanel">
+                      <div id="decryptionOutput" class="output-section"></div>
+                    </div>
+                  </div>
+                    <div id="keyGenOutput" class="output-section"></div>
+                    <div id="nedOutput" class="output-section"></div>
+                    <div id="encryptionOutput" class="output-section"></div>
+                    <div id="decryptionOutput" class="output-section"></div>
+                </div>
+                
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+
+
+<script src="{% static 'assets/js/rsa.js' %}"></script>
+
+{% endblock %}

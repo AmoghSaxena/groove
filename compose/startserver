@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+echo "SLEEPING"
+sleep 1s
+
+set -o errexit
+set -o nounset
+
+
+################# MYSQL CONFIGURATIONS ####################
+cd /PROJECT
+
+python manage.py runserver 0.0.0.0:5085
+###########################################################
