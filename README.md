@@ -23,16 +23,15 @@
       covered.
     </p>
     <h2 id="installation">Installation</h2>
-    <ol>
+    <ol>Standalone 
       <li>
         Clone the repository:
         <code
-          >git clone
-          https://github.com/yourusername/crypto-visualization.git</code
+          >git clone https://github.com/AmoghSaxena/groove.git</code
         >
       </li>
       <li>
-        Navigate to the project directory: <code>cd crypto-visualization</code>
+        Navigate to the project directory: <code>cd groove</code>
       </li>
       <li>
         Install the required dependencies:
@@ -43,6 +42,19 @@
         <code>python manage.py runserver</code>
       </li>
       <li>
+        Access the application in your web browser at:
+        <code>http://localhost:8000</code>
+      </li>
+    </ol>
+    <ol>Docker Container
+    <li>
+    Edit `docker-compose.yml` if you want to change some settings
+    </li>
+    <li>
+    Start the docker container:
+    <code>docker compose up -d</code>[if using v1 then <code>docker-compose up -d</code>]
+    </li>
+    <li>
         Access the application in your web browser at:
         <code>http://localhost:8000</code>
       </li>

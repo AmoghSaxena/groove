@@ -2,7 +2,7 @@ version: "3"
 services:
     dashboard:
         build: .
-        hostname: apcserver
+        hostname: groove
         command: /startserver
         ports:
             - 8000:5085
