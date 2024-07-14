@@ -14,7 +14,7 @@ def document(request):
 
 def index(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'rsa/rsaDemo.html')
+    return render(request, 'index.html')
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
