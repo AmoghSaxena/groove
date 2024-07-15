@@ -4,8 +4,8 @@ services:
         build: .
         hostname: groove
         command: /startserver
+        env_file: ./.env
         ports:
             - 8000:5085
         volumes:
             - ./:/PROJECT/
-  
