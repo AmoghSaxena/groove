@@ -26,8 +26,7 @@
     <ol>Standalone 
       <li>
         Clone the repository:
-        <code
-          >git clone https://github.com/AmoghSaxena/groove.git</code
+        <code>git clone https://github.com/AmoghSaxena/groove.git</code
         >
       </li>
       <li>
@@ -48,11 +47,19 @@
     </ol>
     <ol>Docker Container
     <li>
+        Clone the repository:
+        <code>git clone https://github.com/AmoghSaxena/groove.git</code
+        >
+      </li>
+      <li>
+        Navigate to the project directory: <code>cd groove</code>
+      </li>
+    <li>
     Edit `docker-compose.yml` if you want to change some settings
     </li>
     <li>
     Start the docker container:
-    <code>docker compose up -d</code>[if using v1 then <code>docker-compose up -d</code>]
+    <code>docker compose up -d</code> [if using v1 then <code>docker-compose up -d</code>]
     </li>
     <li>
         Access the application in your web browser at:

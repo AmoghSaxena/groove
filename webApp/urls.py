@@ -18,5 +18,5 @@ urlpatterns = [
     path("prng/lcg", views.prngLcgInfo, name="prngLcgInfo"),
     path("prng/lcg/demo", views.prngLcgDemo, name="prngLcgDemo"),
     path("trng/demo", views.trngDemo, name="trngDemo"),
-    path("document", views.document, name="document"),
+    path("documentation", views.documentation, name="documentation"),
 ]

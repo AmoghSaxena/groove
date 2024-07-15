@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
@@ -12,9 +10,88 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
-                <h2 class="card-title text-primary">True Random Number Generator Demo</h2>
+                <h2 class="card-title text-primary">
+                  True Random Number Generator Demo
+                </h2>
+
+                <div class="input-group">
+                <!-- Fullscreen Modal -->
+                <div class="mt-3">
+                  <button
+                    type="button"
+                    class="btn btn-icon rounded-pill btn-outline-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#fullscreenModal"
+                  >
+                    <span class="tf-icons bx bx-notepad"></span>
+                  </button>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="fullscreenModal"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-fullscreen" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalFullTitle">
+                            True Random Number Generator / Hardware Random Number Generator
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <h3>Overview</h3>
+  <p>A True Random Number Generator (TRNG), also known as a Hardware Random Number Generator (HRNG) or a Non-Deterministic Random Bit Generator (NRBG), is a device that generates random numbers from a physical process, such as thermal noise, atmospheric noise, or quantum phenomena. Unlike pseudorandom number generators (PRNGs), which use deterministic algorithms, TRNGs produce genuinely random numbers that are unpredictable and have high entropy.</p>
+
+  <h3>Principles of TRNGs</h3>
+  <ul>
+    <li>Unpredictability: The generated numbers should be impossible to predict better than by random chance.</li>
+    <li>Uniformity: The numbers should be uniformly distributed, with equal probability for any number to be generated.</li>
+    <li>Independence: The generated numbers should be statistically independent, unrelated to any previously generated numbers.</li>
+    <li>Non-determinism: The generation process should be based on a physical phenomenon that is inherently random and non-deterministic.</li>
+  </ul>
+
+  <h3>TRNG Components</h3>
+  <p>A typical TRNG consists of the following components:</p>
+  <ul>
+    <li>Entropy Source: A physical process that produces random noise, such as thermal noise, atmospheric noise, or quantum phenomena.</li>
+    <li>Digitizer: Converts the analog output of the entropy source into a binary representation.</li>
+    <li>Conditioning: Improves the quality of the random bits by removing biases and correlations.</li>
+    <li>Health Tests: Continuously monitor the TRNG's output to ensure proper functioning and detect any failures or attacks.</li>
+  </ul>
+
+  <h3>Example: Generating a Random Number</h3>
+  <p>Suppose we have a TRNG that uses atmospheric noise as its entropy source. The atmospheric noise is sampled and digitized, producing a stream of random bits:</p>
+  <p>1011010001101011...</p>
+  <p>After conditioning and health tests, the random bits are ready for use. To generate a random number between 0 and 255, we can take 8 consecutive bits from the stream:</p>
+  <p>10110100 = 180 (in decimal)</p>
+  <p>Thus, the TRNG has generated a random number: 180.</p>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--MODLE END HERE-->
+                &nbsp;&nbsp;&nbsp;
+                <!--Start of Caution Button-->
                 <div class="col-lg-3 col-md-6">
-                  <small class="text-light fw-semibold mb-3"></small>
                   <div class="mt-3">
                     <button
                       class="btn btn-icon rounded-pill btn-outline-secondary"
@@ -23,7 +100,7 @@
                       data-bs-target="#offcanvasEnd"
                       aria-controls="offcanvasEnd"
                     >
-                    <span class="tf-icons bx bx-bell"></span>
+                      <span class="tf-icons bx bx-bell"></span>
                     </button>
                     <div
                       class="offcanvas offcanvas-end"
@@ -32,7 +109,9 @@
                       aria-labelledby="offcanvasEndLabel"
                     >
                       <div class="offcanvas-header">
-                        <h5 id="offcanvasEndLabel" class="offcanvas-title">Important Note</h5>
+                        <h5 id="offcanvasEndLabel" class="offcanvas-title">
+                          Important Note
+                        </h5>
                         <button
                           type="button"
                           class="btn-close text-reset"
@@ -42,44 +121,84 @@
                       </div>
                       <div class="offcanvas-body my-auto mx-0 flex-grow-0">
                         <p class="">
-                          Please note that while this demo illustrates the basic concepts of a TRNG, it is still a simplified representation and may not meet the strict requirements of a true TRNG in terms of entropy quality and unpredictability. Real-world TRNGs often rely on more sophisticated hardware-based entropy sources and post-processing techniques to ensure high-quality randomness.
+                          Please note that while this demo illustrates the basic
+                          concepts of a TRNG, it is still a simplified
+                          representation and may not meet the strict
+                          requirements of a true TRNG in terms of entropy
+                          quality and unpredictability. Real-world TRNGs often
+                          rely on more sophisticated hardware-based entropy
+                          sources and post-processing techniques to ensure
+                          high-quality randomness.
                         </p>
-                        {% comment %} <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button> {% endcomment %}
                         <button
                           type="button"
                           class="btn btn-outline-secondary d-grid w-100"
                           data-bs-dismiss="offcanvas"
                         >
-                        Continue
+                          Continue
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!--End of Caution Button-->
+              </div>
+
                 <div class="card-body">
                   <div class="step card-body">
-                    
                     <h3>Step 1: Collect Entropy</h3>
                     <p>Click on the canvas below to collect entropy:</p>
-                    <canvas id="entropy-canvas" width="400" height="200" class="border border-dark"></canvas>
-                    <p>Entropy value: <span id="entropy-value" class="text-warning">0</span></p>
-                    <p>Click count: <span id="click-count" class="text-danger">0</span></p>
+                    <canvas
+                      id="entropy-canvas"
+                      width="400"
+                      height="200"
+                      class="border border-dark"
+                    ></canvas>
+                    <p>
+                      Entropy value:
+                      <span id="entropy-value" class="text-warning">0</span>
+                    </p>
+                    <p>
+                      Click count:
+                      <span id="click-count" class="text-danger">0</span>
+                    </p>
                   </div>
-                
+
                   <div class="step card-body">
                     <h3>Step 2: User Input</h3>
-                      <div class="input-group">
-                          {% comment %} <input id="inputText" type="text" class="form-control" placeholder="Enter Text to Encrypt" aria-label="Enter Text to Encrypt" aria-describedby="button-addon2"> {% endcomment %}
-                          <input type="number" class="form-control" id="min" placeholder="Minimum value" value="1">
-                          <input type="number" class="form-control" id="max" placeholder="Maximum value" value="100">
-                          <button onclick="generateNumbers()" class="btn btn-outline-primary" type="button" id="button-addon2">Generate Numbers</button>
-                      </div>
+                    <div class="input-group">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="min"
+                        placeholder="Minimum value"
+                        value="1"
+                      />
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="max"
+                        placeholder="Maximum value"
+                        value="100"
+                      />
+                      <button
+                        onclick="generateNumbers()"
+                        class="btn btn-outline-primary"
+                        type="button"
+                        id="button-addon2"
+                      >
+                        Generate Numbers
+                      </button>
+                    </div>
                   </div>
-                  
-                  <div class="step card-body">  
+
+                  <div class="step card-body">
                     <h3>Step 3: Generate Random Numbers</h3>
                     <pre>Formula: <span class="formula">Math.floor((entropy * (max - min + 1) + timestamp) % (max - min + 1)) + min</span></pre>
-                    <p class="h5"><strong>Random Number</strong>: <span id="random-numbers" class="text-primary h5"></span></p>
+                    <p class="h5">
+                      <strong>Random Number</strong>:
+                      <span id="random-numbers" class="text-primary h5"></span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -91,7 +210,7 @@
   </div>
   <!-- / Content -->
 
-
   <script src="{% static 'assets/js/trng.js' %}"></script>
 
-{% endblock %}
+  {% endblock %}
+</div>

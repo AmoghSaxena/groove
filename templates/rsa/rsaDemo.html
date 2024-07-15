@@ -13,6 +13,82 @@
             <div class="col-lg-12">
               <div class="card-body">
                 <h2 class="card-title text-primary">Interactive RSA Algorithm Visualization</h2>
+                <!-- Fullscreen Modal -->
+<div class="mt-3">
+  <button
+    type="button"
+    class="btn btn-icon rounded-pill btn-outline-dark"
+    data-bs-toggle="modal"
+    data-bs-target="#fullscreenModal"
+  >
+    <span class="tf-icons bx bx-notepad"></span>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFullTitle">RSA</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <h3>Overview</h3>
+  <p>RSA is a widely used public-key cryptosystem named after its inventors Ron Rivest, Adi Shamir, and Leonard Adleman. It is based on the difficulty of factoring large composite numbers and is used for secure data transmission and digital signatures.</p>
+
+  <h3>Key Generation</h3>
+  <ol>
+    <li>Choose two distinct prime numbers <span class="formula">p</span> and <span class="formula">q</span>.</li>
+    <li>Compute <span class="formula">n = pq</span> (modulus).</li>
+    <li>Calculate <span class="formula">φ(n) = (p-1)(q-1)</span> (Euler's totient function).</li>
+    <li>Choose an integer <span class="formula">e</span> such that <span class="formula">1 < e < φ(n)</span> and <span class="formula">gcd(e, φ(n)) = 1</span> (public exponent).</li>
+    <li>Determine <span class="formula">d</span> as <span class="formula">d ≡ e<sup>-1</sup> (mod φ(n))</span> (private exponent).</li>
+    <li>Public key is <span class="formula">(n, e)</span> and private key is <span class="formula">(n, d)</span>.</li>
+  </ol>
+
+  <h3>Encryption</h3>
+  <p>To encrypt a message <span class="formula">M</span> using the public key <span class="formula">(n, e)</span>:</p>
+  <p><span class="formula">C ≡ M<sup>e</sup> (mod n)</span></p>
+
+  <h3>Decryption</h3>
+  <p>To decrypt a ciphertext <span class="formula">C</span> using the private key <span class="formula">(n, d)</span>:</p>
+  <p><span class="formula">M ≡ C<sup>d</sup> (mod n)</span></p>
+
+  <h3>Example</h3>
+  <p>Let's generate RSA keys and encrypt/decrypt a message:</p>
+  <ol>
+    <li>Choose primes: <span class="formula">p = 3</span> and <span class="formula">q = 11</span></li>
+    <li>Compute <span class="formula">n = pq = 3 × 11 = 33</span></li>
+    <li>Compute <span class="formula">φ(n) = (p-1)(q-1) = 2 × 10 = 20</span></li>
+    <li>Choose <span class="formula">e</span> coprime to 20, let <span class="formula">e = 7</span></li>
+    <li>Compute <span class="formula">d</span> such that <span class="formula">d × e ≡ 1 (mod 20)</span>, <span class="formula">d = 3</span></li>
+    <li>Public key is <span class="formula">(33, 7)</span> and private key is <span class="formula">(33, 3)</span></li>
+    <li>Let the message <span class="formula">M = 2</span></li>
+    <li>Encrypt: <span class="formula">C ≡ 2<sup>7</sup> ≡ 29 (mod 33)</span></li>
+    <li>Decrypt: <span class="formula">M ≡ 29<sup>3</sup> ≡ 2 (mod 33)</span></li>
+  </ol>
+          
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--MODLE END HERE-->
+
                 <br><br>
 
                 <div class="card-body">

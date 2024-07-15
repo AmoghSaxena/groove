@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
@@ -12,9 +10,133 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
-                <h2 class="card-title text-primary">What is Symmetric Key Primitives?</h2>
-                <p class="mb-4">In cryptography, a cipher (or cypher) is an algorithm for performing encryption or decryption—a series of well-defined steps that can be followed as a procedure. An alternative, less common term is encipherment. To encipher or encode is to convert information into cipher or code. In common parlance, "cipher" is synonymous with "code", as they are both a set of steps that encrypt a message; however, the concepts are distinct in cryptography, especially classical cryptography.
+                <h2 class="card-title text-primary">
+                  What is Symmetric primitives?
+                </h2>
+
+                <h3>Overview</h3>
+                <p>
+                  Symmetric cryptographic primitives, also known as secret-key
+                  cryptography, are fundamental building blocks in modern
+                  cryptosystems. They use a single secret key for both
+                  encryption and decryption, providing confidentiality,
+                  integrity, and authentication. Symmetric primitives are widely
+                  used due to their efficiency and performance compared to
+                  asymmetric primitives.
                 </p>
+
+                <h3>Key Features</h3>
+                <ul>
+                  <li>
+                    Single secret key: Symmetric primitives use a single secret
+                    key that must be securely shared between the communicating
+                    parties.
+                  </li>
+                  <li>
+                    Encryption and decryption: The same key is used for both
+                    encrypting plaintext into ciphertext and decrypting
+                    ciphertext back into plaintext.
+                  </li>
+                  <li>
+                    Fast and efficient: Symmetric primitives are generally
+                    faster and more efficient than asymmetric primitives, making
+                    them suitable for encrypting large amounts of data.
+                  </li>
+                  <li>
+                    Confidentiality: Symmetric encryption ensures that only
+                    parties with access to the secret key can decrypt and read
+                    the encrypted data.
+                  </li>
+                  <li>
+                    Message authentication: Symmetric primitives can be used to
+                    generate message authentication codes (MACs) to ensure the
+                    integrity and authenticity of data.
+                  </li>
+                </ul>
+
+                <h3>Types of Symmetric Primitives</h3>
+                <p>
+                  Symmetric primitives can be categorized into two main types:
+                  block ciphers and stream ciphers.
+                </p>
+
+                <h4>1. Block Ciphers</h4>
+                <p>
+                  Block ciphers operate on fixed-size blocks of data, typically
+                  64 or 128 bits. They encrypt each block independently using
+                  the secret key. Examples of block ciphers include:
+                </p>
+                <ul>
+                  <li>
+                    AES (Advanced Encryption Standard): A widely used block
+                    cipher with key sizes of 128, 192, or 256 bits.
+                  </li>
+                  <li>
+                    DES (Data Encryption Standard): A legacy block cipher with a
+                    56-bit key size, now considered insecure.
+                  </li>
+                  <li>
+                    Blowfish: A fast and secure block cipher with variable key
+                    sizes up to 448 bits.
+                  </li>
+                </ul>
+
+                <h4>2. Stream Ciphers</h4>
+                <p>
+                  Stream ciphers encrypt data one bit or byte at a time,
+                  generating a pseudorandom keystream that is combined with the
+                  plaintext. Examples of stream ciphers include:
+                </p>
+                <ul>
+                  <li>
+                    RC4 (Rivest Cipher 4): A widely used stream cipher, now
+                    considered insecure due to various vulnerabilities.
+                  </li>
+                  <li>
+                    Salsa20: A fast and secure stream cipher with a 256-bit key
+                    and a 64-bit nonce.
+                  </li>
+                  <li>
+                    ChaCha20: An improved variant of Salsa20, offering better
+                    security and performance.
+                  </li>
+                </ul>
+
+                <h4>3. Substitution Ciphers</h4>
+                <p>
+                  These are classical ciphers are older encryption techniques
+                  that were used historically. While they are not secure by
+                  modern standards, they serve as important educational
+                  examples. Two notable classical ciphers are:
+                </p>
+                <ul>
+                  <li>
+                    Caesar Cipher: A simple substitution cipher that shifts each
+                    letter in the plaintext by a fixed number of positions. It
+                    is a type of monoalphabetic substitution cipher.
+                  </li>
+                  <li>
+                    Vigenère Cipher: A polyalphabetic substitution cipher that
+                    uses a keyword to encrypt the plaintext. It is an
+                    improvement over the Caesar Cipher, providing better
+                    security against frequency analysis attacks.
+                  </li>
+                </ul>
+
+                <h4>4. Pseudorandom sequences</h4>
+                <p>
+                  PRNGs are algorithms that generate sequences of numbers that
+                  appear random but are actually deterministic. They are used in
+                  various cryptographic applications, including key generation
+                  and nonce creation. One common PRNG is:
+                </p>
+                <ul>
+                  <li>
+                    Linear Congruential Generator (LCG): A simple and fast PRNG
+                    that generates a sequence of pseudorandom numbers based on a
+                    linear recurrence relation.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -22,6 +144,7 @@
       </div>
     </div>
   </div>
-  <!-- / Content -->
+</div>
+<!-- / Content -->
 
 {% endblock %}

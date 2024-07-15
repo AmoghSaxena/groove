@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
@@ -12,23 +10,215 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
-                <h2 class="card-title text-primary">Simple Modular Hash Function</h2>
+                <h2 class="card-title text-primary">
+                  Simple Modular Hash Function
+                </h2>
 
-                <div class="card-body">
-                  <p>This demonstrates a hash function that produces a fixed-length output</p>
-                  
-                  <div class="input-group">
-                  {% comment %} <input type="text" id="message" placeholder="Enter a message"> {% endcomment %}
-                  <input type="text" class="form-control" id="message" placeholder="Enter a message">
-                  {% comment %} <button onclick="calculateHash()">Calculate Hash</button> {% endcomment %}
-                  <button onclick="calculateHash()" class="btn btn-outline-primary" type="button" id="button-addon2">Calculate Hash</button>
+                <!-- Fullscreen Modal -->
+                <div class="mt-3">
+                  <button
+                    type="button"
+                    class="btn btn-icon rounded-pill btn-outline-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#fullscreenModal"
+                  >
+                    <span class="tf-icons bx bx-notepad"></span>
+                  </button>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="fullscreenModal"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-fullscreen" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalFullTitle">
+                            Simple Modular Hash Function
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <h3>Overview</h3>
+                          <p>
+                            This is a good example of a keyless cryptographic primitive that can be demonstrated step-by-step is a simple hash function. Hash functions take an input message of any size and produce a fixed-size output called a hash or digest.
+                          </p>
+                          <p>
+                            Real cryptographic hash functions like SHA-256 use more complex math to make it extremely difficult to find collisions or reverse the hash to recover the original input message. But they follow the same general principles of compressing an arbitrary input to a fixed-size output using math operations.
+                          </p>
+                          <p>
+                            So in summary, hash functions are a fundamental building block in cryptography used for data integrity, commitment schemes, password verification and more. They are keyless primitives that map inputs to fixed-size outputs using mathematical formulas.
+                          </p>
+                          <p>
+                            However, it's important to note that this hash function is still a simplified example for educational purposes and should not be used for real-world cryptographic applications. It is designed to be understandable for students who are new to hash functions and cryptography.
+                          </p>
+                          <h3>Properties</h3>
+                            <p>Even this simple hash has some important properties of cryptographic hash functions:</p>
+                            <ul>
+                              <li>
+                                It's deterministic - the same input always produces the same output.
+                              </li>
+                              <li>
+                                It compresses an arbitrary-sized input to a fixed-size output.
+                              </li>
+                              <li>
+                                It's quick to compute the hash for any given message.
+                              </li>
+                            </ul>
+
+                          <h3>Formula</h3>
+                          <p>The hash function can be expressed as:</p>
+                          <p><span class="formula">H(M) = SM(M)</span></p>
+                          <p>Where:</p>
+                          <ul>
+                            <li>
+                              <span class="formula">H(M)</span> is the hash
+                              value of message <span class="formula">M</span>
+                            </li>
+                            <li>
+                              <span class="formula">SM</span> is the
+                              Simple modular hash function
+                            </li>
+                            <li>
+                              <span class="formula">M</span> is the input
+                              message
+                            </li>
+                          </ul>
+
+                          <h3>Hashing Steps</h3>
+                          <ol>
+                            <li>
+                              <p>
+                                Convert the message to an integer using a
+                                rolling hash:
+                              </p>
+                              <ul>
+                                <li>
+                                  The formula
+                                  <code>x = (x * a + charCode) % m</code> is
+                                  used, where <code>a</code> is a multiplier
+                                  (set to 31) and <code>m</code> is the modulus
+                                  (set to 10000).
+                                </li>
+                                <li>
+                                  For each character in the message, the
+                                  character code is obtained using
+                                  <code>charCodeAt()</code>, and the rolling
+                                  hash is updated using the formula.
+                                </li>
+                                <li>
+                                  The step-by-step calculation is displayed in
+                                  the result.
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <p>Apply additional mixing to the hash value:</p>
+                              <ul>
+                                <li>
+                                  The formula
+                                  <code>y = (y * y + i) % m</code> is used,
+                                  where <code>y</code> is initialized to the
+                                  value of <code>x</code> from step 1, and
+                                  <code>i</code> is the iteration number (0 to
+                                  4).
+                                </li>
+                                <li>
+                                  This mixing step is repeated 5 times to
+                                  further scramble the hash value.
+                                </li>
+                                <li>
+                                  The step-by-step calculation is displayed in
+                                  the result.
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <p>Format the hash as a fixed-length string:</p>
+                              <ul>
+                                <li>
+                                  The final hash value <code>y</code> is
+                                  converted to a string using
+                                  <code>toString()</code>.
+                                </li>
+                                <li>
+                                  The <code>padStart()</code> method is used to
+                                  ensure a fixed length of 4 characters by
+                                  padding with leading zeros if necessary.
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <p>
+                                Convert the hash to a 16-digit binary
+                                representation:
+                              </p>
+                              <ul>
+                                <li>
+                                  The padded hash string is converted back to an
+                                  integer using <code>parseInt()</code>.
+                                </li>
+                                <li>
+                                  The <code>toString(2)</code> method is used to
+                                  convert the integer to a binary string.
+                                </li>
+                                <li>
+                                  The <code>padStart()</code> method is used
+                                  again to ensure a fixed length of 16 digits by
+                                  padding with leading zeros.
+                                </li>
+                              </ul>
+                            </li>
+                          </ol>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="card-body"> 
+                <!--MODLE END HERE-->
+
+                <div class="card-body">
+                  <p>
+                    This demonstrates a hash function that produces a
+                    fixed-length output
+                  </p>
+
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="message"
+                      placeholder="Enter a message"
+                    />
+                    <button
+                      onclick="calculateHash()"
+                      class="btn btn-outline-primary"
+                      type="button"
+                      id="button-addon2"
+                    >
+                      Calculate Hash
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
                   <div id="result"></div>
                 </div>
-              {% comment %} <div class="card-body h4" id="result"></div> {% endcomment %}
-              
               </div>
             </div>
           </div>
@@ -39,4 +229,5 @@
   <!-- / Content -->
   <script src="{% static 'assets/js/simpleHash.js' %}"></script>
 
-{% endblock %}
+  {% endblock %}
+</div>

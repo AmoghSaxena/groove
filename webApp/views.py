@@ -8,9 +8,9 @@ def testing(request):
     return render(request, 'tmp.html')
 
 
-def document(request):
+def documentation(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'pages-misc-under-maintenance.html')
+    return render(request, 'documentation.html')
 
 def index(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
@@ -56,7 +56,7 @@ def rsaDemo(request):
 
 def rsaInfo(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'rsa/rsaInfo.html')
+    return render(request, 'types/asymmetric.html')
 
 def prngLcgInfo(request):
     # return HttpResponse("Hello, world. You're at the polls index.")

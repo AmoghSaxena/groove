@@ -15,6 +15,7 @@
 {% url 'prngLcgDemo' as prngLcgDemo %}
 {% url 'trngDemo' as trngDemo %}
 {% url 'simpleHashDemo' as simpleHashDemo %}
+{% url 'documentation' as documentation %}
 
 
 <!-- =========================================================
@@ -173,7 +174,7 @@
                         <li class="menu-item {% if request.path == rsaInfo %} active {% endif %}">
                           <a href="{% url 'rsaInfo' %}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Tables">What is RSA?</div>
+                            <div data-i18n="Tables">What is Asymmetric primitives?</div>
                           </a>
                         </li>
                         
@@ -251,7 +252,7 @@
             <li class="menu-item {% if request.path == hashInfo %} active {% endif %}">
               <a href="{% url 'hashInfo' %}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Tables">What is HASH?</div>
+                <div data-i18n="Tables">What is Unkeyed Primitives?</div>
               </a>
             </li>
             <li class="menu-item {% if request.path == sha265 %} active open {% endif %} {% if request.path == simpleHashDemo %} active open {% endif %} {% if request.path == trngDemo %} active open {% endif %}">
@@ -294,12 +295,8 @@
                 <div data-i18n="Support">Support</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a
-                href="document"
-                target="_blank"
-                class="menu-link"
-              >
+            <li class="menu-item {% if request.path == documentation %} active {% endif %}">
+              <a href="{% url 'documentation' %}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="Documentation">Documentation</div>
               </a>
