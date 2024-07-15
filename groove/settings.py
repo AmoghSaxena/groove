@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qbd%izz@w@e8jzl9(nn%ow5s^m5@wv+!l1qysp=1)tcm+g6d7%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 prod_DEBUG = os.getenv('DEBUG_MODE', 'True')
-if prod_DEBUG == 'False':
+if prod_DEBUG == 'false':
     DEBUG = False
 else:
     DEBUG = True
@@ -129,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

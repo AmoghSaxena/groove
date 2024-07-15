@@ -11,5 +11,7 @@ set -o nounset
 ################# MYSQL CONFIGURATIONS ####################
 cd /PROJECT
 
+# python manage.py collectstatic --noinput
+
 python manage.py runserver 0.0.0.0:5085
 ###########################################################
