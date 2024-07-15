@@ -1,119 +1,59 @@
-{% extends "base.html" %} {% block content %} {% load static %}
-<!-- Content wrapper -->
-<div class="content-wrapper">
-  <!-- Content -->
+{% include "header.html" %}
+{% load static %} 
 
-  <div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-      <div class="col-lg-12 mb-4">
-        <div class="card">
-          <div class="d-flex align-items-end row">
-            <div class="col-lg-12">
-              <div class="card-body">
-                <h2 class="card-title text-primary">What is Asymmetric primitives?</h2>
+  <body>
+    <!-- Content -->
 
-                <h3>Overview</h3>
-                <p>
-                  Asymmetric cryptographic primitives, also known as public-key
-                  cryptography, are fundamental building blocks in modern
-                  cryptosystems. They provide secure communication and
-                  authentication in various applications and protocols.
-                  Asymmetric primitives use a pair of mathematically related
-                  keys: a public key and a private key.
-                </p>
-
-                <h3>Key Features</h3>
-                <ul>
-                  <li>
-                    Public and private keys: Asymmetric primitives use a pair of
-                    keys, where the public key can be freely distributed, while
-                    the private key must be kept secret.
-                  </li>
-                  <li>
-                    One-way relationship: It is computationally infeasible to
-                    determine the private key from the public key, ensuring the
-                    security of the cryptosystem.
-                  </li>
-                  <li>
-                    Encryption and decryption: Messages encrypted with the
-                    public key can only be decrypted using the corresponding
-                    private key, providing confidentiality.
-                  </li>
-                  <li>
-                    Digital signatures: Messages signed with the private key can
-                    be verified using the public key, ensuring authentication,
-                    integrity, and non-repudiation.
-                  </li>
-                  <li>
-                    Key exchange: Asymmetric primitives enable secure key
-                    exchange over insecure channels, allowing parties to
-                    establish shared secret keys for symmetric encryption.
-                  </li>
-                </ul>
-
-                <h3>Types of Asymmetric Primitives</h3>
-                <p>
-                  There are several types of asymmetric cryptographic
-                  primitives, each with its own mathematical foundations and
-                  properties:
-                </p>
-
-                <h4>1. RSA (Rivest-Shamir-Adleman)</h4>
-                <p>
-                  RSA is one of the most widely used asymmetric primitives. It
-                  is based on the difficulty of factoring large composite
-                  numbers. RSA provides both encryption and digital signature
-                  capabilities.
-                </p>
-
-                <h4>2. Elliptic Curve Cryptography (ECC)</h4>
-                <p>
-                  ECC is based on the algebraic structure of elliptic curves
-                  over finite fields. It offers smaller key sizes compared to
-                  RSA while providing equivalent security. ECC is used for key
-                  exchange (ECDH) and digital signatures (ECDSA).
-                </p>
-
-                <h4>3. Diffie-Hellman Key Exchange (DH)</h4>
-                <p>
-                  Diffie-Hellman is a protocol that allows two parties to
-                  establish a shared secret key over an insecure channel. It is
-                  based on the difficulty of computing discrete logarithms. DH
-                  is commonly used for key exchange in various protocols.
-                </p>
-
-                <h4>4. Digital Signature Algorithm (DSA)</h4>
-                <p>
-                  DSA is a standard for digital signature generation and
-                  verification. It is based on the difficulty of computing
-                  discrete logarithms. DSA is used in various security protocols
-                  and applications.
-                </p>
-
-                <h4>5. ElGamal Encryption</h4>
-                <p>
-                  ElGamal is an asymmetric encryption scheme based on the
-                  Diffie-Hellman key exchange. It provides probabilistic
-                  encryption, meaning that encrypting the same message multiple
-                  times results in different ciphertexts.
-                </p>
-
-                <h4>6. Post-Quantum Cryptography (PQC)</h4>
-                <p>
-                  With the advent of quantum computing, researchers are
-                  developing post-quantum cryptographic primitives that are
-                  resistant to attacks by quantum computers. Examples include
-                  lattice-based cryptography, code-based cryptography, and
-                  multivariate cryptography.
-                </p>
-              </div>
-            </div>
-          </div>
+    <!-- Error -->
+    <div class="container-xxl container-p-y">
+      <div class="misc-wrapper">
+        <h2 class="mb-2 mx-2">Page Not Found :(</h2>
+        <p class="mb-4 mx-2">Oops! 😖 The requested URL was not found on this server.</p>
+        <a href="{% url 'index' %}" class="btn btn-primary">Back to home</a>
+        <div class="mt-3">
+          <img
+            src="{% static 'assets/img/404.png'%}"
+            width="500"
+            class="img-fluid"
+          />
+      
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- / Content -->
+    <!-- /Error -->
 
-{% endblock %}
+    <!-- / Content -->
+
+    <!-- Core JS -->
+    <style>
+      .misc-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - (1.625rem * 2));
+        text-align: center;
+      }
+      
+      /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL3BhZ2UtbWlzYy5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsd0NBQXdDO0VBQ3hDLGtCQUFrQjtBQUNwQiIsImZpbGUiOiJwYWdlcy9wYWdlLW1pc2MuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1pc2Mtd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gKDEuNjI1cmVtICogMikpO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4iXX0= */
+    </style>
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js'%}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js'%}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js'%}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'%}"></script>
+
+    <script src="{% static 'assets/vendor/js/menu.js'%}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js'%}"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
