@@ -147,6 +147,7 @@ function encryptMessage() {
 function decryptMessage() {
     let output = document.getElementById('decryptionOutput');
     output.innerHTML = '<h2>3. Decryption Step</h2>';
+    output.innerHTML += `<p><strong class="text-warning">Encrypted message </strong>:<strong class="text-success"><em> [${encryptedMessage.join(', ')}]</em></strong></p>`;
 
     if (encryptedMessage.length === 0) {
         output.innerHTML += '<p>Please encrypt a message first.</p>';
