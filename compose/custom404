@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Define the new technical_404.html file path
+NEW_TECHNICAL_404_FILE="/technical_404.html"
+
+# Check if the new file exists
+if [ ! -f "$NEW_TECHNICAL_404_FILE" ]; then
+    echo "New technical_404.html file does not exist at $NEW_TECHNICAL_404_FILE"
+    exit 1
+fi
+
+# Find the site-packages directory
+SITE_PACKAGES_DIR=$(python -c "import site; print(site.getsitepackages()[0])")
+
+# Check if site-packages directory was found
+if [ -z "$SITE_PACKAGES_DIR" ]; then
+    echo "Could not find site-packages directory."
+    exit 1
+fi
+
+echo "Site-packages directory found at: $SITE_PACKAGES_DIR"
+
+# Find the technical_404.html file in the Django templates directory
+TECHNICAL_404_FILE=$(find "$SITE_PACKAGES_DIR" -type f -path "*/django/views/templates/technical_404.html")
+
+# Check if the technical_404.html file was found
+if [ -z "$TECHNICAL_404_FILE" ]; then
+    echo "technical_404.html file not found in site-packages."
+    exit 1
+fi
+
+echo "technical_404.html file found at: $TECHNICAL_404_FILE"
+
+# Replace the technical_404.html file
+cp "$NEW_TECHNICAL_404_FILE" "$TECHNICAL_404_FILE"
+
+echo "technical_404.html file has been replaced successfully."
+
+exit 0
