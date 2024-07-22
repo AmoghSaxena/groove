@@ -154,16 +154,6 @@
 
                 <div class="card-body">
                   <div class="input-group">
-                    {% comment %}
-                    <input
-                      id="inputText"
-                      type="text"
-                      class="form-control"
-                      placeholder="Enter Text to Encrypt"
-                      aria-label="Enter Text to Encrypt"
-                      aria-describedby="button-addon2"
-                    />
-                    {% endcomment %}
                     <input
                       type="number"
                       class="form-control"
@@ -194,24 +184,6 @@
                       id="count"
                       placeholder="Number of values"
                     />
-                    {% comment %}
-                    <button
-                      onclick="encode()"
-                      class="btn btn-outline-primary"
-                      type="button"
-                      id="button-addon2"
-                    >
-                      Encode
-                    </button>
-                    <button
-                      onclick="decode()"
-                      class="btn btn-outline-primary"
-                      type="button"
-                      id="button-addon2"
-                    >
-                      Decode
-                    </button>
-                    {% endcomment %}
                     <button
                       onclick="generateNumbers()"
                       class="btn btn-outline-primary"
@@ -221,6 +193,10 @@
                       Generate
                     </button>
                   </div>
+                  <p>
+                    <br>
+                  <a href="{{ request.get_full_path }}" class="btn btn-info">Reset</a>
+                  </p>
                 </div>
                 {% comment %}
                 <div class="card-body h4" id="result"></div>

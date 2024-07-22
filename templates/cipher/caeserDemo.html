@@ -198,8 +198,6 @@
                 >
                   Shift -1
                 </button>
-                <span> &nbsp &nbsp </span><span id="shiftValue">0</span
-                ><span> &nbsp &nbsp </span>
                 <button
                   onclick="incrementShift()"
                   type="button"
@@ -207,6 +205,10 @@
                 >
                   Shift +1
                 </button>
+                <span>Shift Value is: </span>
+                <span id="shiftValue">0</span
+                ><span> &nbsp &nbsp </span>
+                
 
                 <div class="card-body">
                   <div class="input-group">
@@ -234,6 +236,7 @@
                     >
                       Decode
                     </button>
+                    <a href="{{ request.get_full_path }}" class="btn btn-info">Reset</a>
                   </div>
                 </div>
 

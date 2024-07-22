@@ -1,6 +1,7 @@
 from django.urls import path
 
 from . import views
+from .views import get_file_content
 
 urlpatterns = [
     path("", views.index, name="index"),
@@ -19,4 +20,5 @@ urlpatterns = [
     path("prng/lcg/demo", views.prngLcgDemo, name="prngLcgDemo"),
     path("trng/demo", views.trngDemo, name="trngDemo"),
     path("documentation", views.documentation, name="documentation"),
+    path('file-content/', get_file_content, name='file_content'),
 ]
