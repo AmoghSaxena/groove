@@ -15,6 +15,7 @@ urlpatterns = [
     path("hash/simpleHash/Demo", views.simpleHashDemo, name="simpleHashDemo"),
     path("hash", views.hashInfo, name="hashInfo"),
     path("rsa", views.rsaInfo, name="rsaInfo"),
+    path("rsa/info", views.rsaInformation, name="rsaInformation"),
     path("rsa/demo", views.rsaDemo, name="rsaDemo"),
     path("prng/lcg", views.prngLcgInfo, name="prngLcgInfo"),
     path("prng/lcg/demo", views.prngLcgDemo, name="prngLcgDemo"),

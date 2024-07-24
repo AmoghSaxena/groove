@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 import os
 # Create your views here.
 
@@ -59,6 +58,10 @@ def rsaDemo(request):
 def rsaInfo(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'types/asymmetric.html')
+
+def rsaInformation(request):
+    # return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'rsa/rsaInfo.html')
 
 def prngLcgInfo(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
