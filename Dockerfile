@@ -21,6 +21,8 @@ RUN mkdir /PROJECT
 
 WORKDIR /PROJECT
 
+COPY ./* /PROJECT/
+
 COPY ./compose/custom404 /custom404
 RUN sed -i 's/\r$//g' /custom404
 RUN chmod +x /custom404
@@ -39,3 +41,5 @@ RUN chmod +x /startserver
 
 
 EXPOSE 5085
+
+CMD ["/startserver"]
