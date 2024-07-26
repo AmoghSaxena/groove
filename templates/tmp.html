@@ -1,53 +1,49 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Live File Content</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        #file-content {
-            background-color: black;
-            color: white;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            height: calc(100vh - 150px); /* Responsive height */
-            overflow-y: auto; /* Enable vertical scrolling */
-            white-space: pre-wrap; /* Preserve whitespace formatting */
-            width: 90%; /* 80% of the page width */
-            margin: 0 auto; /* Center align the container */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Toast Notification</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .toast-container {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 1055;
+    }
+  </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Live File Content</h1>
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=YwceYzMV60elzQRXvuWUTrf2Ki7yAktAtRpyCBginY9UN1BXU1I1TkZEV1pKR0RBRUVBOTFYVTk2VC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-            </div>
-        </div>
+  
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="mb-0">Notification Example</h1>
+      <button id="showToastButton" class="btn btn-primary">Show Toast</button>
     </div>
+  </div>
 
-    <script>
-        function fetchFileContent() {
-            fetch('/file-content/')
-                .then(response => response.json())
-                .then(data => {
-                    const fileContentDiv = document.getElementById('file-content');
-                    fileContentDiv.textContent = data.content;
-                    // Auto-scroll to the bottom
-                    fileContentDiv.scrollTop = fileContentDiv.scrollHeight;
-                })
-                .catch(error => console.error('Error fetching file content:', error));
-        }
+  <div class="toast-container">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="2000">
+      <div class="toast-header">
+        <i class="bx bx-bell me-2"></i>
+        <strong class="me-auto">REXTER</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Fruitcake chocolate bar tootsie roll gummies gummies jelly beans cake.
+      </div>
+    </div>
+  </div>
 
-        // Fetch the file content every 5 seconds
-        setInterval(fetchFileContent, 5000);
-
-        // Initial fetch
-        fetchFileContent();
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('showToastButton').onclick = function () {
+      var toastEl = document.querySelector('.toast');
+      var toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    };
+  </script>
 </body>
 </html>
