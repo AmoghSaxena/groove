@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
@@ -12,67 +10,320 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
+                <a class="btn btn-dark btn-icon" href="{% url 'rsaDemo' %}"
+                  ><span class="tf-icons bx bx-arrow-back"></span
+                ></a>
+                <br /><br />
                 <h2 class="card-title text-primary">What is RSA?</h2>
-                <p class="mb-4"> The Rivest-Shamir-Adleman (RSA) encryption algorithm is an asymmetric encryption algorithm that is widely used in many products and services. Asymmetric encryption uses a key pair that is mathematically linked to encrypt and decrypt data. A private and public key are created, with the public key being accessible to anyone and the private key being a secret known only by the key pair creator. With RSA, either the private or public key can encrypt the data, while the other key decrypts it. This is one of the reasons RSA is the most used asymmetric encryption algorithm.
+
+                <p class="mb-4">
+                  The Rivest-Shamir-Adleman (RSA) encryption algorithm is an
+                  asymmetric encryption algorithm that is widely used in many
+                  products and services. Asymmetric encryption uses a key pair
+                  that is mathematically linked to encrypt and decrypt data. A
+                  private and public key are created, with the public key being
+                  accessible to anyone and the private key being a secret known
+                  only by the key pair creator. With RSA, either the private or
+                  public key can encrypt the data, while the other key decrypts
+                  it. This is one of the reasons RSA is the most used asymmetric
+                  encryption algorithm.
                 </p>
                 <p>
-                    The other method of asymmetric encryption with RSA is encrypting a message with a private key. In this example, the sender of the data encrypts the data with their private key and sends encrypted data and their public key along to the recipient of the data. The recipient of the data can then decrypt the data with the sender’s public key, thus verifying the sender is who they say they are. With this method, the data could be stolen and read in transit, but the true purpose of this type of encryption is to prove the identity of the sender. If the data were stolen and modified in transit, the public key would not be able to decrypt the new message, and so the recipient would know the data had been modified in transit.
+                  The other method of asymmetric encryption with RSA is
+                  encrypting a message with a private key. In this example, the
+                  sender of the data encrypts the data with their private key
+                  and sends encrypted data and their public key along to the
+                  recipient of the data. The recipient of the data can then
+                  decrypt the data with the sender’s public key, thus verifying
+                  the sender is who they say they are. With this method, the
+                  data could be stolen and read in transit, but the true purpose
+                  of this type of encryption is to prove the identity of the
+                  sender. If the data were stolen and modified in transit, the
+                  public key would not be able to decrypt the new message, and
+                  so the recipient would know the data had been modified in
+                  transit.
                 </p>
                 <ul class="list-unstyled mt-2">
-                  <li>The process of RSA encryption and decryption can be summarized in three main steps:
+                  <li>
+                    The process of RSA encryption and decryption can be
+                    summarized in three main steps:
                     <ul>
-                      <li>Key Generation: Two large prime numbers are chosen and multiplied together to produce a modulus. The public and private keys are then derived from this modulus.</li>
-                      <li>Encryption: The sender uses the recipient's public key to encrypt the message. This ensures that only the recipient can decrypt the message using their private key.</li>
-                      <li>Decryption: The recipient uses their private key to decrypt the message, recovering the original plaintext.</li>
+                      <li>
+                        Key Generation: Two large prime numbers are chosen and
+                        multiplied together to produce a modulus. The public and
+                        private keys are then derived from this modulus.
+                      </li>
+                      <li>
+                        Encryption: The sender uses the recipient's public key
+                        to encrypt the message. This ensures that only the
+                        recipient can decrypt the message using their private
+                        key.
+                      </li>
+                      <li>
+                        Decryption: The recipient uses their private key to
+                        decrypt the message, recovering the original plaintext.
+                      </li>
                     </ul>
                   </li>
                 </ul>
                 <div class="col-sm-5 text-center text-sm-left">
                   <div class="card-body pb-0 px-0 px-md-4">
-                    <img
-                      src="{% static 'assets/img/RSA.jpg' %}"
-                      height="250"
-                    />
+                    <img src="{% static 'assets/img/RSA.jpg' %}" height="250" />
                   </div>
                 </div>
-                <br>
+                <br />
                 <p class="mb-4">
-                  Despite its strengths, RSA is not without its challenges. The algorithm is computationally intensive, and its security depends on the key size. Larger keys provide greater security but require more processing power. As computational capabilities continue to evolve, cryptographers are constantly exploring new techniques to enhance the security of RSA and other cryptographic methods.                  <br>
-                  <br>
+                  Despite its strengths, RSA is not without its challenges. The
+                  algorithm is computationally intensive, and its security
+                  depends on the key size. Larger keys provide greater security
+                  but require more processing power. As computational
+                  capabilities continue to evolve, cryptographers are constantly
+                  exploring new techniques to enhance the security of RSA and
+                  other cryptographic methods. <br />
+                  <br />
                   References
-                  <br>
-                  <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">RSA Algorithm on Wikipedia</a>
+                  <br />
+                  <a
+                    href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-outline-primary"
+                    >RSA Algorithm on Wikipedia</a
+                  >
                 </p>
-              
-              <div class="divider divider-warning">
-                <div class="divider-text">Video for Reference</div>
-              </div>
 
-              <!-- Modal with YouTube Video -->
-              <div class="col-lg-4 col-md-6">
-                <small class="text-light fw-semibold">YouTube Video</small>
+                <!-- Fullscreen Modal -->
                 <div class="mt-3">
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    class="btn btn-outline-dark"
                     data-bs-toggle="modal"
-                    data-bs-target="#youTubeModal"
-                    data-theVideo="https://www.youtube.com/embed/b4b8ktEV4Bg"
+                    data-bs-target="#fullscreenModal"
                   >
-                    Launch Video
+                    Overview of RSA
                   </button>
 
                   <!-- Modal -->
-                  <div class="modal fade" id="youTubeModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                  <div
+                    class="modal fade"
+                    id="fullscreenModal"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-fullscreen" role="document">
                       <div class="modal-content">
-                        <iframe height="350" src="https://www.youtube.com/embed/b4b8ktEV4Bg"></iframe>
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalFullTitle">RSA</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <h3>Overview</h3>
+                          <p>
+                            RSA is a widely used public-key cryptosystem named
+                            after its inventors Ron Rivest, Adi Shamir, and
+                            Leonard Adleman. It is based on the difficulty of
+                            factoring large composite numbers and is used for
+                            secure data transmission and digital signatures.
+                          </p>
+
+                          <h3>Key Generation</h3>
+                          <ol>
+                            <li>
+                              Choose two distinct prime numbers
+                              <span class="formula">p</span> and
+                              <span class="formula">q</span>.
+                            </li>
+                            <li>
+                              Compute
+                              <span class="formula">n = pq</span> (modulus).
+                            </li>
+                            <li>
+                              Calculate
+                              <span class="formula">φ(n) = (p-1)(q-1)</span>
+                              (Euler's totient function).
+                            </li>
+                            <li>
+                              Choose an integer
+                              <span class="formula">e</span> such that
+                              <span class="formula">1 < e < φ(n)</span> and
+                              <span class="formula">gcd(e, φ(n)) = 1</span>
+                              (public exponent).
+                            </li>
+                            <li>
+                              Determine <span class="formula">d</span> as
+                              <span class="formula"
+                                >d ≡ e<sup>-1</sup> (mod φ(n))</span
+                              >
+                              (private exponent).
+                            </li>
+                            <li>
+                              Public key is
+                              <span class="formula">(n, e)</span> and private
+                              key is <span class="formula">(n, d)</span>.
+                            </li>
+                          </ol>
+
+                          <h3>Encryption</h3>
+                          <p>
+                            To encrypt a message
+                            <span class="formula">M</span> using the public key
+                            <span class="formula">(n, e)</span>:
+                          </p>
+                          <p>
+                            <span class="formula"
+                              >C ≡ M<sup>e</sup> (mod n)</span
+                            >
+                          </p>
+
+                          <h3>Decryption</h3>
+                          <p>
+                            To decrypt a ciphertext
+                            <span class="formula">C</span> using the private key
+                            <span class="formula">(n, d)</span>:
+                          </p>
+                          <p>
+                            <span class="formula"
+                              >M ≡ C<sup>d</sup> (mod n)</span
+                            >
+                          </p>
+
+                          <h3>Example</h3>
+                          <p>
+                            Let's generate RSA keys and encrypt/decrypt a
+                            message:
+                          </p>
+                          <ol>
+                            <li>
+                              Choose primes:
+                              <span class="formula">p = 3</span> and
+                              <span class="formula">q = 11</span>
+                            </li>
+                            <li>
+                              Compute
+                              <span class="formula">n = pq = 3 × 11 = 33</span>
+                            </li>
+                            <li>
+                              Compute
+                              <span class="formula"
+                                >φ(n) = (p-1)(q-1) = 2 × 10 = 20</span
+                              >
+                            </li>
+                            <li>
+                              Choose <span class="formula">e</span> coprime to
+                              20, let <span class="formula">e = 7</span>
+                            </li>
+                            <li>
+                              Compute <span class="formula">d</span> such that
+                              <span class="formula">d × e ≡ 1 (mod 20)</span>,
+                              <span class="formula">d = 3</span>
+                            </li>
+                            <li>
+                              Public key is
+                              <span class="formula">(33, 7)</span> and private
+                              key is <span class="formula">(33, 3)</span>
+                            </li>
+                            <li>
+                              Let the message <span class="formula">M = 2</span>
+                            </li>
+                            <li>
+                              Encrypt:
+                              <span class="formula"
+                                >C ≡ 2<sup>7</sup> ≡ 29 (mod 33)</span
+                              >
+                            </li>
+                            <li>
+                              Decrypt:
+                              <span class="formula"
+                                >M ≡ 29<sup>3</sup> ≡ 2 (mod 33)</span
+                              >
+                            </li>
+                          </ol>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!--Button Ends here!-->
+                <!--MODLE END HERE-->
+
+                <div class="divider divider-warning">
+                  <div class="divider-text">Video for Reference</div>
+                </div>
+
+                <!-- Modal with YouTube Video -->
+                <div class="col-lg-4 col-md-6">
+                  <small class="text-light fw-semibold">YouTube Video</small>
+                  <div class="mt-3">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#youTubeModal"
+                      data-theVideo="https://www.youtube.com/embed/ZPXVSJnDA_A"
+                    >
+                      Video | How RSA Encryption Works
+                    </button>
+
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="youTubeModal"
+                      tabindex="-1"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <iframe
+                            height="350"
+                            src="https://www.youtube.com/embed/ZPXVSJnDA_A"
+                          ></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#youTubeModa2"
+                      data-theVideo="https://www.youtube.com/embed/wcbH4t5SJpg"
+                    >
+                      Video | How to Encrypt with RSA
+                    </button>
+
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="youTubeModa2"
+                      tabindex="-1"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <iframe
+                            height="350"
+                            src="https://www.youtube.com/embed/wcbH4t5SJpg"
+                          ></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Button Ends here!-->
               </div>
             </div>
           </div>
@@ -82,4 +333,5 @@
   </div>
   <!-- / Content -->
 
-{% endblock %}
+  {% endblock %}
+</div>

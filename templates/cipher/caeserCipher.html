@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
@@ -12,8 +10,27 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
+                <a
+                  class="btn btn-dark btn-icon"
+                  href="{% url 'caeserCipherDemo' %}"
+                  ><span class="tf-icons bx bx-arrow-back"></span
+                ></a>
+                <br /><br />
                 <h2 class="card-title text-primary">Caesar Cipher</h2>
-                <p class="mb-4">In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code, or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of <span class="text-success">3</span>, <span class="text-primary">D</span> would be replaced by <span class="text-warning">A</span>, <span class="text-primary">E</span> would become <span class="text-warning">B</span>, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+                <p class="mb-4">
+                  In cryptography, a Caesar cipher, also known as Caesar's
+                  cipher, the shift cipher, Caesar's code, or Caesar shift, is
+                  one of the simplest and most widely known encryption
+                  techniques. It is a type of substitution cipher in which each
+                  letter in the plaintext is replaced by a letter some fixed
+                  number of positions down the alphabet. For example, with a
+                  left shift of <span class="text-success">3</span>,
+                  <span class="text-primary">D</span> would be replaced by
+                  <span class="text-warning">A</span>,
+                  <span class="text-primary">E</span> would become
+                  <span class="text-warning">B</span>, and so on. The method is
+                  named after Julius Caesar, who used it in his private
+                  correspondence.
                 </p>
                 <div class="col-sm-5 text-center text-sm-left">
                   <div class="card-body pb-0 px-0 px-md-4">
@@ -23,44 +40,212 @@
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <p class="mb-4">
-                    The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security.
-                    <br><br>
-                    Example:
-                    <br>
-                    The transformation can be represented by aligning two alphabets; the cipher alphabet is the plain alphabet rotated left or right by some number of positions. For instance, here is a Caesar cipher using a left rotation of three places, equivalent to a right shift of <strong>23</strong> (the shift parameter is used as the key):
+                  The encryption step performed by a Caesar cipher is often
+                  incorporated as part of more complex schemes, such as the
+                  Vigenère cipher, and still has modern application in the ROT13
+                  system. As with all single-alphabet substitution ciphers, the
+                  Caesar cipher is easily broken and in modern practice offers
+                  essentially no communications security.
+                  <br /><br />
+                  Example:
+                  <br />
+                  The transformation can be represented by aligning two
+                  alphabets; the cipher alphabet is the plain alphabet rotated
+                  left or right by some number of positions. For instance, here
+                  is a Caesar cipher using a left rotation of three places,
+                  equivalent to a right shift of <strong>23</strong> (the shift
+                  parameter is used as the key):
 
-                    <br><br>
-                    <code>
-                    Plain:    ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                    <br>
-                    Cipher:   XYZABCDEFGHIJKLMNOPQRSTUVW
-                    </code>
-                    <br><br>
-                    When encrypting, a person looks up each letter of the message in the "plain" line and writes down the corresponding letter in the "cipher" line.
+                  <br /><br />
+                  <code>
+                    Plain: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                    <br />
+                    Cipher: XYZABCDEFGHIJKLMNOPQRSTUVW
+                  </code>
+                  <br /><br />
+                  When encrypting, a person looks up each letter of the message
+                  in the "plain" line and writes down the corresponding letter
+                  in the "cipher" line.
 
-                    <br><br>
-                    <code>
-                    Plaintext:  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
-                    <br>
+                  <br /><br />
+                  <code>
+                    Plaintext: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+                    <br />
                     Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD
-                    </code>
-                    <br><br>
+                  </code>
+                  <br /><br />
 
-                    Complexity
-                    <br>
-                    Time: <kbd>O(|n|)</kbd>
-                    <br>  
-                    Space: <kbd>O(|n|)</kbd>
+                  Complexity
+                  <br />
+                  Time: <kbd>O(|n|)</kbd>
+                  <br />
+                  Space: <kbd>O(|n|)</kbd>
 
-                    <br><br>
+                  <br /><br />
 
-                    References
-                    <br>
+                  References
+                  <br />
 
-                <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">Caesar cipher on Wikipedia</a>
-              </p>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Caesar_cipher"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-outline-primary"
+                    >Caesar cipher on Wikipedia</a
+                  >
+                </p>
+                <!-- Fullscreen Modal -->
+                <div class="mt-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#fullscreenModal"
+                  >
+                    Overview of Caeser Cipher
+                  </button>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="fullscreenModal"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-fullscreen" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalFullTitle">
+                            Caesar Cipher
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <h3>Overview</h3>
+                          <p>
+                            The Caesar Cipher, also known as the shift cipher,
+                            is one of the simplest and most widely known
+                            encryption techniques. It is a type of substitution
+                            cipher where each letter in the plaintext is
+                            replaced by a letter some fixed number of positions
+                            down the alphabet. For example, with a shift of 3, A
+                            would be replaced by D, B would become E, and so on.
+                          </p>
+
+                          <h3>History</h3>
+                          <p>
+                            The Caesar Cipher is named after Julius Caesar, who
+                            reportedly used it to communicate with his
+                            officials. It is a simple example of a substitution
+                            cipher and has been used historically for basic
+                            encryption.
+                          </p>
+
+                          <h3>Encryption Formula</h3>
+                          <p>
+                            The encryption can be represented using modular
+                            arithmetic by first transforming the letters into
+                            numbers, according to the scheme, A = 0, B = 1,...,
+                            Z = 25. The encryption of a letter x by a shift n
+                            can be described mathematically as:
+                          </p>
+
+                          <p>
+                            <span class="formula"
+                              >E<sub>n</sub>(x) = (x + n) mod 26</span
+                            >
+                          </p>
+
+                          <h3>Decryption Formula</h3>
+                          <p>
+                            Decryption is performed similarly to encryption,
+                            except we subtract the shift value instead of adding
+                            it:
+                          </p>
+
+                          <p>
+                            <span class="formula"
+                              >D<sub>n</sub>(x) = (x - n) mod 26</span
+                            >
+                          </p>
+
+                          <h3>Encryption Steps</h3>
+                          <ol>
+                            <li>
+                              Convert each letter of the plaintext to its
+                              corresponding numeric value (A = 0, B = 1, etc.)
+                            </li>
+                            <li>Add the shift value to each numeric value</li>
+                            <li>
+                              Take the result modulo 26 (to wrap around the
+                              alphabet)
+                            </li>
+                            <li>Convert the numeric values back to letters</li>
+                          </ol>
+
+                          <h3>Decryption Steps</h3>
+                          <ol>
+                            <li>
+                              Convert each letter of the ciphertext to its
+                              corresponding numeric value
+                            </li>
+                            <li>
+                              Subtract the shift value from each numeric value
+                            </li>
+                            <li>
+                              Take the result modulo 26 (to wrap around the
+                              alphabet)
+                            </li>
+                            <li>Convert the numeric values back to letters</li>
+                          </ol>
+
+                          <h3>Example</h3>
+                          <p>
+                            Let's consider the plaintext "HELLO" and a shift
+                            value of 3.
+                          </p>
+
+                          <p><strong>Encryption:</strong></p>
+                          <ul>
+                            <li>H (7) + 3 = 10 mod 26 = 10 -> K</li>
+                            <li>E (4) + 3 = 7 mod 26 = 7 -> H</li>
+                            <li>L (11) + 3 = 14 mod 26 = 14 -> O</li>
+                            <li>L (11) + 3 = 14 mod 26 = 14 -> O</li>
+                            <li>O (14) + 3 = 17 mod 26 = 17 -> R</li>
+                          </ul>
+                          <p>The ciphertext is "KHOOR".</p>
+
+                          <p><strong>Decryption:</strong></p>
+                          <ul>
+                            <li>K (10) - 3 = 7 mod 26 = 7 -> H</li>
+                            <li>H (7) - 3 = 4 mod 26 = 4 -> E</li>
+                            <li>O (14) - 3 = 11 mod 26 = 11 -> L</li>
+                            <li>O (14) - 3 = 11 mod 26 = 11 -> L</li>
+                            <li>R (17) - 3 = 14 mod 26 = 14 -> O</li>
+                          </ul>
+                          <p>The decrypted plaintext is "HELLO".</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--MODLE END HERE-->
               </div>
             </div>
           </div>
@@ -70,4 +255,5 @@
   </div>
   <!-- / Content -->
 
-{% endblock %}
+  {% endblock %}
+</div>

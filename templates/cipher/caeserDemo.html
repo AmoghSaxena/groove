@@ -10,160 +10,18 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
                 <h2 class="card-title text-primary">
                   Working of Caeser Cipher
                 </h2>
-                <!-- Fullscreen Modal -->
-                <div class="mt-3">
-                  <button
-                    type="button"
-                    class="btn btn-icon rounded-pill btn-outline-dark"
-                    data-bs-toggle="modal"
-                    data-bs-target="#fullscreenModal"
-                  >
-                  <span class="tf-icons bx bx-notepad"></span>
-                  </button>
-
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="fullscreenModal"
-                    tabindex="-1"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog modal-fullscreen" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="modalFullTitle">
-                            Caesar Cipher
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">
-                          <h3>Overview</h3>
-                          <p>
-                            The Caesar Cipher, also known as the shift cipher,
-                            is one of the simplest and most widely known
-                            encryption techniques. It is a type of substitution
-                            cipher where each letter in the plaintext is
-                            replaced by a letter some fixed number of positions
-                            down the alphabet. For example, with a shift of 3, A
-                            would be replaced by D, B would become E, and so on.
-                          </p>
-
-                          <h3>History</h3>
-                          <p>
-                            The Caesar Cipher is named after Julius Caesar, who
-                            reportedly used it to communicate with his
-                            officials. It is a simple example of a substitution
-                            cipher and has been used historically for basic
-                            encryption.
-                          </p>
-
-                          <h3>Encryption Formula</h3>
-                          <p>
-                            The encryption can be represented using modular
-                            arithmetic by first transforming the letters into
-                            numbers, according to the scheme, A = 0, B = 1,...,
-                            Z = 25. The encryption of a letter x by a shift n
-                            can be described mathematically as:
-                          </p>
-
-                          <p>
-                            <span class="formula"
-                              >E<sub>n</sub>(x) = (x + n) mod 26</span
-                            >
-                          </p>
-
-                          <h3>Decryption Formula</h3>
-                          <p>
-                            Decryption is performed similarly to encryption,
-                            except we subtract the shift value instead of adding
-                            it:
-                          </p>
-
-                          <p>
-                            <span class="formula"
-                              >D<sub>n</sub>(x) = (x - n) mod 26</span
-                            >
-                          </p>
-
-                          <h3>Encryption Steps</h3>
-                          <ol>
-                            <li>
-                              Convert each letter of the plaintext to its
-                              corresponding numeric value (A = 0, B = 1, etc.)
-                            </li>
-                            <li>Add the shift value to each numeric value</li>
-                            <li>
-                              Take the result modulo 26 (to wrap around the
-                              alphabet)
-                            </li>
-                            <li>Convert the numeric values back to letters</li>
-                          </ol>
-
-                          <h3>Decryption Steps</h3>
-                          <ol>
-                            <li>
-                              Convert each letter of the ciphertext to its
-                              corresponding numeric value
-                            </li>
-                            <li>
-                              Subtract the shift value from each numeric value
-                            </li>
-                            <li>
-                              Take the result modulo 26 (to wrap around the
-                              alphabet)
-                            </li>
-                            <li>Convert the numeric values back to letters</li>
-                          </ol>
-
-                          <h3>Example</h3>
-                          <p>
-                            Let's consider the plaintext "HELLO" and a shift
-                            value of 3.
-                          </p>
-
-                          <p><strong>Encryption:</strong></p>
-                          <ul>
-                            <li>H (7) + 3 = 10 mod 26 = 10 -> K</li>
-                            <li>E (4) + 3 = 7 mod 26 = 7 -> H</li>
-                            <li>L (11) + 3 = 14 mod 26 = 14 -> O</li>
-                            <li>L (11) + 3 = 14 mod 26 = 14 -> O</li>
-                            <li>O (14) + 3 = 17 mod 26 = 17 -> R</li>
-                          </ul>
-                          <p>The ciphertext is "KHOOR".</p>
-
-                          <p><strong>Decryption:</strong></p>
-                          <ul>
-                            <li>K (10) - 3 = 7 mod 26 = 7 -> H</li>
-                            <li>H (7) - 3 = 4 mod 26 = 4 -> E</li>
-                            <li>O (14) - 3 = 11 mod 26 = 11 -> L</li>
-                            <li>O (14) - 3 = 11 mod 26 = 11 -> L</li>
-                            <li>R (17) - 3 = 14 mod 26 = 14 -> O</li>
-                          </ul>
-                          <p>The decrypted plaintext is "HELLO".</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-outline-dark"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <a
+                  class="btn btn-outline-dark"
+                  href="{% url 'caeserCipherInfo' %}"
+                  >What is Caeser Cipher?</a
+                >
                 </div>
-                <!--MODLE END HERE-->
-                <br /><br />
+                </div>
+                <div class="card-body">
                 <div
                   class="gear h3"
                   style="display: inline-block; margin: auto"
@@ -198,8 +56,6 @@
                 >
                   Shift -1
                 </button>
-                <span> &nbsp &nbsp </span><span id="shiftValue">0</span
-                ><span> &nbsp &nbsp </span>
                 <button
                   onclick="incrementShift()"
                   type="button"
@@ -207,8 +63,13 @@
                 >
                   Shift +1
                 </button>
+                <span>Shift Value is: </span>
+                <span id="shiftValue">0</span
+                ><span> &nbsp &nbsp </span>
+                <br><br>
+                
 
-                <div class="card-body">
+                
                   <div class="input-group">
                     <input
                       id="inputText"
@@ -218,6 +79,10 @@
                       aria-label="Enter Text to Encrypt"
                       aria-describedby="button-addon2"
                     />
+                    </div>
+                    <br>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="input-group">
                     <button
                       onclick="processText('encode')"
                       class="btn btn-outline-primary"
@@ -234,8 +99,10 @@
                     >
                       Decode
                     </button>
-                  </div>
-                </div>
+                    </div>
+                    <a href="{{ request.get_full_path }}" class="btn btn-info">Reset</a>
+                    </div>
+                
 
                 <p for="outputText">
                   <strong class="text-warning">Output Text</strong>:

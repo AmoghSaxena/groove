@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends
 # \ openssh-server screen libsasl2-dev python-dev libldap2-dev libssl-dev python3-dev ldap-utils tox lcov valgrind
 
 COPY ./requirements.txt /requirements.txt
+COPY ./404custom.html /technical_404.html
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r /requirements.txt 
 
@@ -20,9 +21,11 @@ RUN mkdir /PROJECT
 
 WORKDIR /PROJECT
 
-# COPY ./compose/migrate /migrate
-# RUN sed -i 's/\r$//g' /migrate
-# RUN chmod +x /migrate
+COPY ./* /PROJECT/
+
+COPY ./compose/custom404 /custom404
+RUN sed -i 's/\r$//g' /custom404
+RUN chmod +x /custom404
 
 COPY ./compose/startserver /startserver
 RUN sed -i 's/\r$//g' /startserver
@@ -38,3 +41,5 @@ RUN chmod +x /startserver
 
 
 EXPOSE 5085
+
+CMD ["/startserver"]

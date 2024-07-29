@@ -1,0 +1,240 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card">
+          <div class="d-flex align-items-end row">
+            <div class="col-lg-12">
+              <!--Main Code starts Here!-->
+              <div class="card-body">
+                <a
+                  class="btn btn-dark btn-icon"
+                  href="{% url 'trngDemo' %}"
+                  ><span class="tf-icons bx bx-arrow-back"></span
+                ></a>
+                <br><br>
+                <h2 class="card-title text-primary">
+                  True Random Number Generator (TRNG)
+                </h2>
+
+                <p>
+                  A True Random Number Generator (TRNG), also known as a
+                  Hardware Random Number Generator (HRNG) or a Non-Deterministic
+                  Random Bit Generator (NRBG), is a device that generates random
+                  numbers from a physical process, such as thermal noise,
+                  atmospheric noise, or quantum phenomena. Unlike pseudorandom
+                  number generators (PRNGs), which use deterministic algorithms,
+                  TRNGs produce genuinely random numbers that are unpredictable
+                  and have high entropy.
+                </p>
+
+                <h3>Principles of TRNGs</h3>
+                <ul>
+                  <li>
+                    Unpredictability: The generated numbers should be impossible
+                    to predict better than by random chance.
+                  </li>
+                  <li>
+                    Uniformity: The numbers should be uniformly distributed,
+                    with equal probability for any number to be generated.
+                  </li>
+                  <li>
+                    Independence: The generated numbers should be statistically
+                    independent, unrelated to any previously generated numbers.
+                  </li>
+                  <li>
+                    Non-determinism: The generation process should be based on a
+                    physical phenomenon that is inherently random and
+                    non-deterministic.
+                  </li>
+                </ul>
+
+                <h3>TRNG Components</h3>
+                <p>A typical TRNG consists of the following components:</p>
+                <ul>
+                  <li>
+                    Entropy Source: A physical process that produces random
+                    noise, such as thermal noise, atmospheric noise, or quantum
+                    phenomena.
+                  </li>
+                  <li>
+                    Digitizer: Converts the analog output of the entropy source
+                    into a binary representation.
+                  </li>
+                  <li>
+                    Conditioning: Improves the quality of the random bits by
+                    removing biases and correlations.
+                  </li>
+                  <li>
+                    Health Tests: Continuously monitor the TRNG's output to
+                    ensure proper functioning and detect any failures or
+                    attacks.
+                  </li>
+                </ul>
+
+                <h3>Example: Generating a Random Number</h3>
+                <p>
+                  Suppose we have a TRNG that uses atmospheric noise as its
+                  entropy source. The atmospheric noise is sampled and
+                  digitized, producing a stream of random bits:
+                </p>
+                <p>1011010001101011...</p>
+                <p>
+                  After conditioning and health tests, the random bits are ready
+                  for use. To generate a random number between 0 and 255, we can
+                  take 8 consecutive bits from the stream:
+                </p>
+                <p>10110100 = 180 (in decimal)</p>
+                <p>Thus, the TRNG has generated a random number: 180.</p>
+
+                <p>
+                  A True Random Number Generator (TRNG) is a device or algorithm
+                  that generates a sequence of numbers that are truly random and
+                  unpredictable. Unlike pseudorandom number generators (PRNGs),
+                  which use algorithms to generate numbers that appear random
+                  but are actually deterministic, TRNGs use physical phenomena
+                  to generate truly random numbers.
+                </p>
+
+                <h4>How TRNGs Work</h4>
+
+                <p>
+                  TRNGs typically use one or more of the following methods to
+                  generate random numbers:
+                </p>
+
+                <ul>
+                  <li>
+                    <strong>Thermal Noise:</strong> This method uses the random
+                    fluctuations in electrical current caused by heat to
+                    generate random numbers.
+                  </li>
+                  <li>
+                    <strong>Photonic Noise:</strong> This method uses the random
+                    fluctuations in light intensity to generate random numbers.
+                  </li>
+                  <li>
+                    <strong>Radioactive Decay:</strong> This method uses the
+                    random decay of radioactive isotopes to generate random
+                    numbers.
+                  </li>
+                  <li>
+                    <strong>Atmospheric Noise:</strong> This method uses the
+                    random fluctuations in radio frequency signals in the
+                    atmosphere to generate random numbers.
+                  </li>
+                </ul>
+
+                <h4>Images to Illustrate TRNGs</h4>
+
+                <p>Here are some images to help illustrate how TRNGs work:</p>
+
+                <div class="col-sm-5 text-center text-sm-left">
+                  <div class="card-body pb-0 px-0 px-md-4">
+                    <figure>
+                      <img
+                        src="{% static 'assets/img/noiseThermal.png' %}"
+                        height="250"
+                      />
+                      <br /><br />
+                      <figcaption class="text-center blockquote-footer">
+                        Thermal Noise: Random fluctuations in electrical current
+                        caused by heat.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="col-sm-5 text-center text-sm-left">
+                  <div class="card-body pb-0 px-0 px-md-4">
+                    <figure>
+                      <img
+                        src="{% static 'assets/img/noiseLight.png' %}"
+                        height="250"
+                      />
+                      <br /><br />
+                      <figcaption class="text-center blockquote-footer">
+                        Photonic Noise: Random fluctuations in light intensity.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="col-sm-5 text-center text-sm-left">
+                  <div class="card-body pb-0 px-0 px-md-4">
+                    <figure>
+                      <img
+                        src="{% static 'assets/img/noiseRadio.png' %}"
+                        height="250"
+                      />
+                      <br /><br />
+                      <figcaption class="text-center blockquote-footer">
+                        Radioactive Decay: Random decay of radioactive isotopes.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <h4>Advantages of TRNGs</h4>
+
+                <p>TRNGs have several advantages over PRNGs:</p>
+
+                <ul>
+                  <li>
+                    <strong>Unpredictability:</strong> TRNGs generate truly
+                    random numbers that are unpredictable and cannot be
+                    reproduced.
+                  </li>
+                  <li>
+                    <strong>High Entropy:</strong> TRNGs generate numbers with
+                    high entropy, meaning they are highly random and
+                    unpredictable.
+                  </li>
+                  <li>
+                    <strong>Security:</strong> TRNGs are more secure than PRNGs
+                    because they are less vulnerable to attacks that rely on
+                    predictability.
+                  </li>
+                </ul>
+
+                <h4>Applications of TRNGs</h4>
+
+                <p>TRNGs have several applications:</p>
+
+                <ul>
+                  <li>
+                    <strong>Cryptography:</strong> TRNGs are used to generate
+                    keys for secure communication.
+                  </li>
+                  <li>
+                    <strong>Simulation:</strong> TRNGs are used to simulate
+                    real-world phenomena in fields such as finance and science.
+                  </li>
+                  <li>
+                    <strong>Gaming:</strong> TRNGs are used to generate random
+                    numbers for games that require high randomness and
+                    unpredictability.
+                  </li>
+                </ul>
+
+                <p>
+                  Overall, TRNGs are an important tool for generating truly
+                  random numbers, and their applications are diverse and
+                  widespread.
+                </p>
+              </div>
+              <!--Main Code Ends Here!-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+
+  {% endblock %}
+</div>

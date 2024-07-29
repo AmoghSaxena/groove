@@ -1,13 +1,15 @@
 #!/bin/bash
 
 
-echo "SLEEPING"
+echo "CHECKING ALL SERVICE!!!"
 sleep 1s
 
 set -o errexit
 set -o nounset
 
-
+###########################################################
+#### INSTALLING THE CUSTOM 404 PAGE FOR DEBUG ####
+/custom404
 ################# MYSQL CONFIGURATIONS ####################
 cd /PROJECT
 

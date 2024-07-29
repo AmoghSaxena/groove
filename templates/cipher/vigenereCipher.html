@@ -12,6 +12,10 @@
           <div class="d-flex align-items-end row">
             <div class="col-lg-12">
               <div class="card-body">
+                <a class="btn btn-dark btn-icon" href="{% url 'vigenereCipherDemo' %}"
+                  ><span class="tf-icons bx bx-arrow-back"></span
+                ></a>
+                <br><br>
                 <h2 class="card-title text-primary">Vigenère Cipher</h2>
                 <p class="mb-4">
                   The Vigenère cipher is a method of encrypting alphabetic text where each letter of the plaintext is encoded with a different Caesar cipher, whose increment is determined by the corresponding letter of another text, the key.
@@ -63,6 +67,193 @@
 
                 <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">Vigenère cipher on Wikipedia</a>
               </p>
+              <!-- Fullscreen Modal -->
+              <div class="mt-3">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#fullscreenModal"
+                >
+                  Overview of Vigenère Cipher
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="fullscreenModal"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-fullscreen" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalFullTitle">
+                          Vigenère Cipher
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <h3>Overview</h3>
+                        <p>
+                          The Vigenère Cipher is a polyalphabetic substitution
+                          cipher invented by Blaise de Vigenère in the 16th
+                          century. It encrypts alphabetic text using a
+                          keyword, which is repeated to match the length of
+                          the plaintext. Each letter of the plaintext is
+                          shifted based on the corresponding letter of the
+                          keyword, using the Vigenère square.
+                        </p>
+
+                        <h3>Vigenère Square</h3>
+                        <table id="vigenere-square"></table>
+
+                        <h3>Encryption Formula</h3>
+                        <p>
+                          The encryption formula for the Vigenère Cipher is:
+                        </p>
+                        <p>
+                          <span class="formula"
+                            >C<sub>i</sub> = (P<sub>i</sub> + K<sub>i</sub>)
+                            mod 26</span
+                          >
+                        </p>
+                        <p>Where:</p>
+                        <ul>
+                          <li>
+                            C<sub>i</sub> is the i-th character of the
+                            ciphertext
+                          </li>
+                          <li>
+                            P<sub>i</sub> is the i-th character of the
+                            plaintext
+                          </li>
+                          <li>
+                            K<sub>i</sub> is the i-th character of the key
+                          </li>
+                        </ul>
+
+                        <h3>Decryption Formula</h3>
+                        <p>
+                          The decryption formula for the Vigenère Cipher is:
+                        </p>
+                        <p>
+                          <span class="formula"
+                            >P<sub>i</sub> = (C<sub>i</sub> - K<sub>i</sub> +
+                            26) mod 26</span
+                          >
+                        </p>
+
+                        <h3>Encryption Steps</h3>
+                        <ol>
+                          <li>
+                            Choose a keyword and repeat it to match the length
+                            of the plaintext.
+                          </li>
+                          <li>
+                            For each letter in the plaintext, find the
+                            corresponding letter in the keyword.
+                          </li>
+                          <li>
+                            Use the Vigenère square to find the intersection
+                            of the plaintext letter's row and the keyword
+                            letter's column. This is the ciphertext letter.
+                          </li>
+                          <li>
+                            Repeat steps 2-3 for each letter in the plaintext.
+                          </li>
+                        </ol>
+
+                        <h3>Decryption Steps</h3>
+                        <ol>
+                          <li>
+                            Repeat the keyword to match the length of the
+                            ciphertext.
+                          </li>
+                          <li>
+                            For each letter in the ciphertext, find the
+                            corresponding letter in the keyword.
+                          </li>
+                          <li>
+                            Locate the keyword letter's row in the Vigenère
+                            square and find the ciphertext letter in that row.
+                          </li>
+                          <li>
+                            The column heading of the ciphertext letter is the
+                            plaintext letter.
+                          </li>
+                          <li>
+                            Repeat steps 2-4 for each letter in the
+                            ciphertext.
+                          </li>
+                        </ol>
+
+                        <h3>Example</h3>
+                        <p>
+                          Let's encrypt the message "HELLO WORLD" using the
+                          keyword "SECRET".
+                        </p>
+                        <table>
+                          <tr>
+                            <td><strong>Plaintext:</strong></td>
+                            <td>H</td>
+                            <td>E</td>
+                            <td>L</td>
+                            <td>L</td>
+                            <td>O</td>
+                            <td>W</td>
+                            <td>O</td>
+                            <td>R</td>
+                            <td>L</td>
+                            <td>D</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Keyword:</strong></td>
+                            <td>S</td>
+                            <td>E</td>
+                            <td>C</td>
+                            <td>R</td>
+                            <td>E</td>
+                            <td>T</td>
+                            <td>S</td>
+                            <td>E</td>
+                            <td>C</td>
+                            <td>R</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Ciphertext:</strong></td>
+                            <td>Z</td>
+                            <td>I</td>
+                            <td>N</td>
+                            <td>E</td>
+                            <td>S</td>
+                            <td>P</td>
+                            <td>Q</td>
+                            <td>V</td>
+                            <td>N</td>
+                            <td>Q</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--MODLE END HERE-->
               </div>
             </div>
           </div>
