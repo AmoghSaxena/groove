@@ -36,10 +36,12 @@
                       id="key"
                       placeholder="Enter key"
                     />
-                    <button class="btn btn-primary mb-2" onclick="encrypt()">
+                    <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-outline-primary mb-2" onclick="encrypt()">
                       Encrypt
                     </button>
                     <a href="{{ request.get_full_path }}" class="btn btn-info mb-2">Reset</a>
+                    </div>
                   </div>
                 </div>
 

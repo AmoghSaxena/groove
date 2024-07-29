@@ -48,9 +48,11 @@ async function encrypt() {
     // Display plaintext, keyword, and extended key before encryption
     document.getElementById('details').innerHTML = `
 
-        Key Word: &nbsp;${key}<br>
-        Plain Text: <span class="text-uppercase">${plaintext}</span><br>
-        Key: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${extendedKey}
+        <em>Watch the intersection of the highlighted row and column to see the encrypted character.</em><br>
+        <strong class="text-info">Key Word</strong>: <span class="text-warning">${key}</span><br>
+        <strong class="text-info">Plain Text</strong>: <span class="text-uppercase text-warning">${plaintext}</span><br>
+        <strong class="text-info">Key</strong>: <span class="text-warning">${extendedKey}</span>
+        
     `;
 
     // Clear previous highlights

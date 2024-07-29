@@ -66,9 +66,10 @@
                 <span>Shift Value is: </span>
                 <span id="shiftValue">0</span
                 ><span> &nbsp &nbsp </span>
+                <br><br>
                 
 
-                <div class="card-body">
+                
                   <div class="input-group">
                     <input
                       id="inputText"
@@ -78,6 +79,10 @@
                       aria-label="Enter Text to Encrypt"
                       aria-describedby="button-addon2"
                     />
+                    </div>
+                    <br>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="input-group">
                     <button
                       onclick="processText('encode')"
                       class="btn btn-outline-primary"
@@ -94,9 +99,10 @@
                     >
                       Decode
                     </button>
+                    </div>
                     <a href="{{ request.get_full_path }}" class="btn btn-info">Reset</a>
-                  </div>
-                </div>
+                    </div>
+                
 
                 <p for="outputText">
                   <strong class="text-warning">Output Text</strong>:

@@ -47,6 +47,10 @@ def sha265(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'hash/sha256.html')
 
+def hashInfoSHA(request):
+    # return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'hash/hashInfoSHA.html')
+
 def simpleHashDemo(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'hash/simpleHashDemo.html')
@@ -74,6 +78,9 @@ def prngLcgDemo(request):
 def trngDemo(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'trng/trngDemo.html')
+
+def trngInfo(request):
+    return render(request, 'trng/trngInfo.html')
 
 def get_file_content(request):
     file_path = '/home/rexter/Desktop/Project/logs/rexter.txt'
